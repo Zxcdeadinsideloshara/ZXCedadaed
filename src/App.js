@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 
 import {
   ReactFlow,
-  MiniMap,
   Position,
   Handle,
   Controls,
@@ -85,6 +84,22 @@ import guy32 from './drevo2/people32.png';
 const handleStyle = { left: 1000 };
 
 const initialNodes = [
+    { 
+    id: '1sttree', 
+    position: { x: 150, y: -1200 }, 
+    data: { label: <h1>КАФЕДРА СОЦИАЛЬНОЙ ФИЛОСОФИИ</h1> },
+      width: '200px',
+      height: '150px',
+    draggable: false 
+  },
+    { 
+    id: '2ndtree', 
+    position: { x: 3925, y: -1500 }, 
+    data: { label: <h1>КАФЕДРА ИСТОРИИ ФИЛОСОФИИ, ФИЛОСОФСКОЙ АНТРОПОЛОГИИ, ЭТИКИ, ЭСТЕТИКИ ТЕОРИИ И ИСТОРИИ КУЛЬТУРЫ</h1> },
+      width: '250px',
+      height: '350px',
+    draggable: false 
+  },
   { // Первое древо людишки //
     id: '1', 
     position: { x: 200, y: -1000 }, 
@@ -374,7 +389,7 @@ const initialNodes = [
   // начало молодняка //
         { 
     id: '14', 
-    position: { x: 1800, y: 0 }, 
+    position: { x: -1200, y: 0 }, 
     data: { 
       image: employee13Image,
       info: {
@@ -1515,11 +1530,9 @@ function App() {
         elementsSelectable={false} // Выключаем выбор элементов
         zoomOnScroll={true} // Включаем зум при прокрутке
         fitView // Автоматически подгоняет вид
-        style={{ backgroundColor: 'gray' }}
+        style={{ backgroundColor: 'beige' }}
       >
-        <MiniMap />
-        <Controls />
-        <Background />
+      <Controls />
       </ReactFlow>
 
       {/* Всплывающее окно с информацией */}
